@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkeliza_docs=self.webpackChunkeliza_docs||[]).push([[59818],{59818:(e,c,s)=>{s.d(c,{createArchitectureServices:()=>a.S});var a=s(46554);s(69663)}}]);
