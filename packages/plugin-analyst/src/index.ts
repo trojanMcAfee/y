@@ -1,5 +1,5 @@
 import { elizaLogger, Client, IAgentRuntime, Plugin, Service, ServiceType } from "@elizaos/core";
-import { marketDataProvider } from "./providers";
+import { marketDataProvider } from "./providers/marketData";
 
 // export * as providers from "./providers";
 
