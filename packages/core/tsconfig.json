@@ -22,7 +22,8 @@
         "checkJs": false,
         "noEmitOnError": false,
         "moduleDetection": "force",
-        "allowArbitraryExtensions": true
+        "allowArbitraryExtensions": true,
+        "sourceMap": true
     },
     "include": [
         "src/**/*"

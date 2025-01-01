@@ -1,12 +1,12 @@
 import { elizaLogger, Client, IAgentRuntime, Plugin, Service, ServiceType } from "@elizaos/core";
 import { marketDataProvider } from "./providers/marketData";
 
-// export * as providers from "./providers";
 
+export { marketDataProvider } from "./providers/marketData";
 
 export const analystPlugin: Plugin = {
     name: "analyst",
-    description: "Plugin for making HTTP requests to external endpoints",
+    description: "Plugin for getting the OHLC data of a market",
     services: [],
     actions: [],
     evaluators: [],

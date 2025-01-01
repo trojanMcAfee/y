@@ -13,6 +13,7 @@ import {
     ModelClass,
     Client,
     IAgentRuntime,
+    ServiceType,
 } from "@elizaos/core";
 import { stringToUuid } from "@elizaos/core";
 import { settings } from "@elizaos/core";
@@ -190,6 +191,11 @@ export class DirectClient {
                 const state = await runtime.composeState(userMessage, {
                     agentName: runtime.character.name,
                 });
+
+                // const marketData = await runtime.plugins
+                //     .find(plugin => plugin.name === 'marketDataProvider')
+                //     ?.providers[0]
+                //     .get(runtime, memory, state);
 
                 const context = composeContext({
                     state,
