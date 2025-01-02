@@ -192,11 +192,6 @@ export class DirectClient {
                     agentName: runtime.character.name,
                 });
 
-                // const marketData = await runtime.plugins
-                //     .find(plugin => plugin.name === 'marketDataProvider')
-                //     ?.providers[0]
-                //     .get(runtime, memory, state);
-
                 const context = composeContext({
                     state,
                     template: messageHandlerTemplate,
