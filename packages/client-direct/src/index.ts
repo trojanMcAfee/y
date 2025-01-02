@@ -22,6 +22,36 @@ import * as fs from "fs";
 import * as path from "path";
 const upload = multer({ storage: multer.memoryStorage() });
 
+export const messageHandlerTemplate2 =
+    // {{goals}}
+    `# Action Examples
+{{actionExamples}}
+(Action examples are for reference only. Do not use the information from them in your response.)
+
+# Knowledge
+{{knowledge}}
+
+# Task: Generate dialog and actions for the character {{agentName}}.
+About {{agentName}}:
+{{bio}}
+{{lore}}
+
+The data here: {{providers}} is historical market data for the EURUSD pair over one year, with two readings per day.
+
+Use this {{knowledge}} to analyze the data, using that trading method, and then write the next message for {{agentName}}, which should be a prediction.
+
+# Capabilities
+Note that {{agentName}} is capable of reading/seeing/hearing various forms of media, including images, videos, audio, plaintext and PDFs. Recent attachments have been included above under the "Attachments" section.
+
+{{messageDirections}}
+
+{{recentMessages}}
+
+{{actions}}
+
+# Instructions: Write the prediction for {{agentName}} of where EURUSD will be in 4 months.
+` + messageCompletionFooter;
+
 export const messageHandlerTemplate =
     // {{goals}}
     `# Action Examples

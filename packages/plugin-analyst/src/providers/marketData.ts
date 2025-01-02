@@ -31,19 +31,19 @@ export const marketDataProvider: Provider = {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = (await response.json()).result.EURUSD.map((item: any) => ({
-            timestamp: new Date(item[0] * 1000).toISOString(),
-            price: item[5] // VWAP price
-        }));
+        const data = (await response.json()).result.ZEURZUSD.map((item: any) => [
+            new Date(item[0] * 1000).toISOString(),
+            item[5] //vwap price
+        ]);
 
         elizaLogger.log('Market Data Provider Response:', data);
 
-        state.responseData = {
-            text: 'responseData from market data provider',
-            url: params.endpoint,
-            marketData: data,
-            timestamp: new Date().toISOString()
-        };
-        return data;
+        // state.responseData = {
+        //     text: 'responseData from market data provider',
+        //     url: params.endpoint,
+        //     marketData: data,
+        //     timestamp: new Date().toISOString()
+        // };
+        return JSON.stringify(data);
     }
 };
