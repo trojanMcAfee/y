@@ -29,5 +29,5 @@ export const bootstrapPlugin: Plugin = {
         unmuteRoomAction,
     ],
     evaluators: [factEvaluator, goalEvaluator],
-    providers: [timeProvider, factsProvider], //boredomProvider
+    providers: [factsProvider], //boredomProvider, timeProvider
 };

@@ -32,24 +32,23 @@ export const messageHandlerTemplate2 =
 {{knowledge}}
 
 # Task: Generate dialog and actions for the character {{agentName}}.
-About {{agentName}}:
-{{bio}}
-{{lore}}
 
-The data here: {{providers}} is historical market data for the EURUSD pair over one year, with two readings per day.
+The data here: {{providers}} is historical market data for the EURUSD pair over one year, where the first element on each nested array is in Unix time.
 
-Use this {{knowledge}} to analyze the data, using that trading method, and then write the next message for {{agentName}}, which should be a prediction.
+Use this {{knowledge}} to analyze the data, based on:
+   - Figure Charts (Point-and-Figure)
+   - Wave Charts
+
+Using that analysys, write the next message for {{agentName}}, which should be a prediction of the future price of EURUSD.
 
 # Capabilities
 Note that {{agentName}} is capable of reading/seeing/hearing various forms of media, including images, videos, audio, plaintext and PDFs. Recent attachments have been included above under the "Attachments" section.
 
 {{messageDirections}}
 
-{{recentMessages}}
-
 {{actions}}
 
-# Instructions: Write the prediction for {{agentName}} of where EURUSD will be in 4 months.
+# Instructions: Write the prediction for {{agentName}} of where EURUSD will be in 4 months and give an explanation of how you came to that conclusion.
 ` + messageCompletionFooter;
 
 export const messageHandlerTemplate =
@@ -224,7 +223,7 @@ export class DirectClient {
 
                 const context = composeContext({
                     state,
-                    template: messageHandlerTemplate,
+                    template: messageHandlerTemplate2,
                 });
 
                 const response = await generateMessageResponse({

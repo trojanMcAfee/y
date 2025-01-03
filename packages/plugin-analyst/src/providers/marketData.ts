@@ -32,18 +32,12 @@ export const marketDataProvider: Provider = {
         }
 
         const data = (await response.json()).result.ZEURZUSD.map((item: any) => [
-            new Date(item[0] * 1000).toISOString(),
+            item[0],
             item[5] //vwap price
         ]);
 
         elizaLogger.log('Market Data Provider Response:', data);
 
-        // state.responseData = {
-        //     text: 'responseData from market data provider',
-        //     url: params.endpoint,
-        //     marketData: data,
-        //     timestamp: new Date().toISOString()
-        // };
         return JSON.stringify(data);
     }
 };
